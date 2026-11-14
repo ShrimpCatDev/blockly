@@ -13,7 +13,11 @@ config_version=5
 config/name="blocky"
 run/main_scene="uid://ba2745641ngms"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [display]
 
