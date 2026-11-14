@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ba2745641ngms"]
 
+[ext_resource type="Script" uid="uid://bl6b68u6w8kiy" path="res://scenes/ball.gd" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://dl3nlidek2sk5" path="res://assets/ball.png" id="1_o5qli"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ha1pi"]
@@ -9,6 +10,7 @@ radius = 8.0
 
 [node name="Ball" type="Area2D" parent="." unique_id=1960020633]
 position = Vector2(155, 125)
+script = ExtResource("1_0wfyh")
 
 [node name="Collision" type="CollisionShape2D" parent="Ball" unique_id=302427565]
 shape = SubResource("CircleShape2D_ha1pi")
