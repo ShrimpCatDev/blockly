@@ -1,14 +1,3 @@
 [gd_scene format=3 uid="uid://ba2745641ngms"]
 
-<<<<<<< Updated upstream
-[node name="Main" type="Node2D" unique_id=461388142]
-=======
-[ext_resource type="Texture2D" uid="uid://dl3nlidek2sk5" path="res://assets/ball.png" id="1_o5qli"]
-
-[node name="Main" type="Node2D" unique_id=461388142]
-
-[node name="Area2D" type="Area2D" parent="." unique_id=446007082]
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1180997145]
-texture = ExtResource("1_o5qli")
->>>>>>> Stashed changes
+[node name="Main" type="Node2D" unique_id=1113939576]
