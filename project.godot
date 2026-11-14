@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="blocky"
+run/main_scene="uid://ba2745641ngms"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=196
-window/size/viewport_height=160
+window/size/viewport_width=320
+window/size/viewport_height=256
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
