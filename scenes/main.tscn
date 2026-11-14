@@ -1,37 +1,11 @@
 [gd_scene format=3 uid="uid://ba2745641ngms"]
 
-[ext_resource type="Script" uid="uid://bl6b68u6w8kiy" path="res://scenes/ball.gd" id="1_0wfyh"]
-[ext_resource type="Texture2D" uid="uid://dl3nlidek2sk5" path="res://assets/ball.png" id="1_o5qli"]
-[ext_resource type="Texture2D" uid="uid://c8p4heg3roprm" path="res://assets/Placeholder_Tower.png" id="3_sugp2"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ha1pi"]
-radius = 8.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8fpmw"]
-radius = 11.0
-height = 26.0
+[ext_resource type="PackedScene" uid="uid://6c44dr4kj0rk" path="res://scenes/ball.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bfobtbx3cugn0" path="res://scenes/tower.tscn" id="2_sugp2"]
 
 [node name="Main" type="Node2D" unique_id=1113939576]
 
-[node name="Ball" type="Area2D" parent="." unique_id=1960020633]
-position = Vector2(155, 125)
-script = ExtResource("1_0wfyh")
+[node name="Ball" parent="." unique_id=176090509 instance=ExtResource("2_0wfyh")]
 
-[node name="Collision" type="CollisionShape2D" parent="Ball" unique_id=302427565]
-shape = SubResource("CircleShape2D_ha1pi")
-
-[node name="Sprite" type="Sprite2D" parent="Ball" unique_id=202407857]
-texture = ExtResource("1_o5qli")
-
-[node name="Tower" type="Area2D" parent="." unique_id=1548576594]
-position = Vector2(2, 2)
-
-[node name="Sprite" type="Sprite2D" parent="Tower" unique_id=108304307]
-position = Vector2(364, 209)
-texture = ExtResource("3_sugp2")
-
-[node name="Hitbox" type="Area2D" parent="Tower" unique_id=1649418766]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Hitbox" unique_id=776885038]
-position = Vector2(364, 206)
-shape = SubResource("CapsuleShape2D_8fpmw")
+[node name="Tower" parent="." unique_id=1609993156 instance=ExtResource("2_sugp2")]
+position = Vector2(501, 312)
