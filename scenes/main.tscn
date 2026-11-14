@@ -2,10 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://dl3nlidek2sk5" path="res://assets/ball.png" id="1_o5qli"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ha1pi"]
+radius = 8.0
+
 [node name="Main" type="Node2D" unique_id=1113939576]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1960020633]
-position = Vector2(96, 70)
+[node name="Ball" type="Area2D" parent="." unique_id=1960020633]
+position = Vector2(155, 125)
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=202407857]
+[node name="Collision" type="CollisionShape2D" parent="Ball" unique_id=302427565]
+shape = SubResource("CircleShape2D_ha1pi")
+
+[node name="Sprite" type="Sprite2D" parent="Ball" unique_id=202407857]
 texture = ExtResource("1_o5qli")
