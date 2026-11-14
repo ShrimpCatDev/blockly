@@ -34,4 +34,8 @@ func _process(delta: float) -> void:
 		dy=1
 	if position.x-width<=0:
 		dx=1
-	print(position.x)
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Tower") and not area.get_node("DeadTower").visible:
+		area.get_node("AliveTower").visible = false
+		area.get_node("DeadTower").visible = true
