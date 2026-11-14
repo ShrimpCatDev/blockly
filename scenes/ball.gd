@@ -2,16 +2,36 @@ extends Area2D
 
 var vx=0
 var vy=0
-var speed=50
+
+var dx=1
+var dy=1
+
+var speed=200
+
+var width: float
+var gs: Vector2
+var gp: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	gs=get_viewport().get_visible_rect().size
+	gp=get_viewport().get_visible_rect().position
+	width=$Collision.shape.radius
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	vx=speed*delta
-	vy=speed*delta
+	vx=speed*dx*delta
+	vy=speed*dy*delta
 	position.x+=vx
 	position.y+=vy
+	
+	if position.x+width>=gs.x:
+		dx=-1
+	if position.y+width>=gs.y:
+		dy=-1
+	if position.y-width<=0:
+		dy=1
+	if position.x-width<=0:
+		dx=1
+	print(position.x)
