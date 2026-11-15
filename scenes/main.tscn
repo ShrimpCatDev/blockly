@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://kghkvu70ae6l" path="res://scenes/label.gd" id="3_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cel5lny2fpxko" path="res://scenes/bricks.tscn" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://cju0ksiwgvkdl" path="res://assets/Background.png" id="3_tbgi4"]
+[ext_resource type="FontFile" uid="uid://cxxieuk3c3ihm" path="res://assets/monogram.ttf" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://brokqrln1vi6y" path="res://scenes/goodball.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://contfgfy33yu5" path="res://assets/tree.png" id="8_tipki"]
 
@@ -32,9 +33,12 @@ texture = ExtResource("3_tbgi4")
 [node name="Label" type="Label" parent="." unique_id=171837411]
 offset_left = 29.000008
 offset_top = 396.00003
-offset_right = 69.00001
+offset_right = 78.5968
 offset_bottom = 419.00003
 scale = Vector2(2.4799988, 2.9600003)
+theme_override_fonts/font = ExtResource("4_tipki")
+theme_override_font_sizes/font_size = 32
+text = "Meow"
 label_settings = SubResource("LabelSettings_tipki")
 script = ExtResource("3_o6xl0")
 
