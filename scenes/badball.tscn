@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6c44dr4kj0rk"]
 
 [ext_resource type="Script" uid="uid://canlepryjc7f7" path="res://scenes/bad_ball.gd" id="1_ia1mn"]
-[ext_resource type="Texture2D" uid="uid://dl3nlidek2sk5" path="res://assets/ball.png" id="2_f7cbr"]
+[ext_resource type="Texture2D" uid="uid://bxbcuwuj741e0" path="res://assets/ballEvil.png" id="2_ia1mn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7s4qf"]
 friction = 0.0
@@ -26,7 +26,7 @@ script = ExtResource("1_ia1mn")
 shape = SubResource("CircleShape2D_cxlvu")
 
 [node name="Metal ball" type="Sprite2D" parent="BallBody" unique_id=1518209356]
-texture = ExtResource("2_f7cbr")
+texture = ExtResource("2_ia1mn")
 
 [node name="BallArea" type="Area2D" parent="BallBody" unique_id=61281799 groups=["BadBall", "Ball"]]
 

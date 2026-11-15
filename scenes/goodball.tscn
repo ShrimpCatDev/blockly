@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brokqrln1vi6y"]
 
 [ext_resource type="Script" uid="uid://cgpan3xrdlxt5" path="res://scenes/good_ball.gd" id="1_if8hn"]
-[ext_resource type="Texture2D" uid="uid://dl3nlidek2sk5" path="res://assets/ball.png" id="2_r5jx0"]
+[ext_resource type="Texture2D" uid="uid://byxbjxjaxem4d" path="res://assets/ballGood.png" id="2_if8hn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7s4qf"]
 friction = 0.0
@@ -29,7 +29,7 @@ shape = SubResource("CircleShape2D_syqwv")
 [node name="BallArea" type="Area2D" parent="BallBody" unique_id=61281799 groups=["Ball", "GoodBall"]]
 
 [node name="Metal ball" type="Sprite2D" parent="BallBody/BallArea" unique_id=1518209356]
-texture = ExtResource("2_r5jx0")
+texture = ExtResource("2_if8hn")
 
 [node name="Hurtbox" type="CollisionShape2D" parent="BallBody/BallArea" unique_id=2088554133 groups=["Ball", "GoodBall"]]
 scale = Vector2(0.99, 0.99)
