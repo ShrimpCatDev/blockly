@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfobtbx3cugn0"]
 
 [ext_resource type="Texture2D" uid="uid://pefvss1hn5bx" path="res://assets/placeholder tower too.png" id="1_2x682"]
+[ext_resource type="Script" uid="uid://dfsthp28yvq3h" path="res://scenes/tower_collision.gd" id="1_ktxwe"]
 [ext_resource type="Texture2D" uid="uid://dkot6dydrn4h" path="res://assets/placeholder tower too LE BURNIE SANDERS.png" id="2_ay4al"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ay4al"]
@@ -9,8 +10,9 @@ height = 40.0
 
 [node name="Tower" type="Node2D" unique_id=1609993156]
 
-[node name="Tower" type="Area2D" parent="." unique_id=1132166555 groups=["Tower"]]
+[node name="Tower" type="Area2D" parent="." unique_id=943018076 groups=["Tower"]]
 position = Vector2(2, 2)
+script = ExtResource("1_ktxwe")
 
 [node name="AliveTower" type="Sprite2D" parent="Tower" unique_id=2144431414]
 position = Vector2(-2, -17)
@@ -24,3 +26,6 @@ shape = SubResource("CapsuleShape2D_ay4al")
 visible = false
 position = Vector2(-2, -17)
 texture = ExtResource("2_ay4al")
+
+[connection signal="area_entered" from="Tower" to="." method="_on_tower_area_entered"]
+[connection signal="area_entered" from="Tower" to="Tower" method="_on_area_entered"]

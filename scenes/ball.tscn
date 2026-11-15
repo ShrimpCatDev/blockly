@@ -1,20 +1,34 @@
 [gd_scene format=3 uid="uid://6c44dr4kj0rk"]
 
-[ext_resource type="Script" uid="uid://bl6b68u6w8kiy" path="res://scenes/ball.gd" id="1_cxlvu"]
+[ext_resource type="Script" uid="uid://canlepryjc7f7" path="res://scenes/ball_body.gd" id="1_cxlvu"]
 [ext_resource type="Texture2D" uid="uid://dl3nlidek2sk5" path="res://assets/ball.png" id="2_f7cbr"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4dx81"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7s4qf"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_syqwv"]
 radius = 8.0
 
 [node name="Ball" type="Node2D" unique_id=176090509]
 
-[node name="Ball" type="Area2D" parent="." unique_id=1839777566]
+[node name="BallBody" type="RigidBody2D" parent="." unique_id=1581304351 groups=["Ball"]]
+physics_material_override = SubResource("PhysicsMaterial_7s4qf")
+gravity_scale = 0.0
+linear_damp_mode = 1
+angular_damp_mode = 1
 script = ExtResource("1_cxlvu")
 
-[node name="Collision" type="CollisionShape2D" parent="Ball" unique_id=1300785501]
-shape = SubResource("CircleShape2D_4dx81")
+[node name="Hurtbox" type="CollisionShape2D" parent="BallBody" unique_id=657790750]
+shape = SubResource("CircleShape2D_syqwv")
 
-[node name="Sprite" type="Sprite2D" parent="Ball" unique_id=838568059]
+[node name="Metal ball" type="Sprite2D" parent="BallBody" unique_id=1518209356]
 texture = ExtResource("2_f7cbr")
 
-[connection signal="area_entered" from="Ball" to="Ball" method="_on_area_entered"]
+[node name="BallArea" type="Area2D" parent="BallBody" unique_id=61281799 groups=["Ball"]]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="BallBody/BallArea" unique_id=2088554133]
+shape = SubResource("CircleShape2D_syqwv")
+debug_color = Color(0.83513576, 0.0013008779, 0.9353263, 0.41960785)
+
+[connection signal="body_entered" from="BallBody" to="BallBody" method="_on_body_entered"]

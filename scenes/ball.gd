@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 var vx=0
 var vy=0
