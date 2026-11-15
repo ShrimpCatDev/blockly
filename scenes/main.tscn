@@ -26,7 +26,7 @@ script = ExtResource("1_sugp2")
 brick_scene = ExtResource("3_sugp2")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1099002743]
-position = Vector2(555, 250)
+position = Vector2(370, 237)
 scale = Vector2(1.66, 1.623)
 texture = ExtResource("3_tbgi4")
 
