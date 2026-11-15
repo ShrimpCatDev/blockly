@@ -6,10 +6,10 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gysv1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gysv1"]
-size = Vector2(8.5, 8.5)
+size = Vector2(9, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syqwv"]
-size = Vector2(16, 16)
+size = Vector2(17, 17)
 
 [node name="Bricks" type="Node2D" unique_id=1447255121]
 
