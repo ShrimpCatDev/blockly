@@ -6,7 +6,7 @@ var vy=0
 var dx=1
 var dy=1
 
-var speed=200
+var speed=randf_range(200,500)
 
 var width: float
 var gs: Vector2
