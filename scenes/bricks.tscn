@@ -3,16 +3,31 @@
 [ext_resource type="Texture2D" uid="uid://ieuv4mijmiil" path="res://assets/brick.png" id="1_d0w7u"]
 [ext_resource type="Script" uid="uid://c8q6barltykmn" path="res://scenes/brick_static.gd" id="1_gysv1"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gysv1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gysv1"]
+size = Vector2(8.5, 8.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syqwv"]
 size = Vector2(16, 16)
 
 [node name="Bricks" type="Node2D" unique_id=1447255121]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1476762012 groups=["Brick"]]
+physics_material_override = SubResource("PhysicsMaterial_gysv1")
+gravity_scale = 0.0
 freeze = true
+contact_monitor = true
+max_contacts_reported = 8
 script = ExtResource("1_gysv1")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1848810213]
+[node name="Area2D" type="Area2D" parent="RigidBody2D" unique_id=1487434424]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D" unique_id=1588635286]
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_gysv1")
+
+[node name="Brick2D" type="Sprite2D" parent="RigidBody2D" unique_id=1848810213]
 scale = Vector2(2, 2)
 texture = ExtResource("1_d0w7u")
 
@@ -21,3 +36,4 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_syqwv")
 
 [connection signal="body_entered" from="RigidBody2D" to="RigidBody2D" method="_on_body_entered"]
+[connection signal="body_entered" from="RigidBody2D/Area2D" to="RigidBody2D" method="_on_area_2d_body_entered"]
